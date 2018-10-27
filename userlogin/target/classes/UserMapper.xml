@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.lzw.ssm.mapper.UserDAO">
+
+    <insert id="addUser" parameterType="User">
+        insert into
+        users(username,id,password) values(#{username},#{id},#{password});
+    </insert>
+
+    <select id="getUsers" resultType="User">
+        select
+        id,username,password from users
+    </select>
+
+    <select id="getUserById" parameterType="java.lang.String" resultType="User">
+        select
+        id,username,password from users where id=#{id}
+    </select>
+
+    <update id="updatePassword" parameterType="java.lang.String" >
+        update users set
+        password=#{password} where id=#{id};
+    </update>
+
+    <select id="getPassword" parameterType="java.lang.String" resultType="java.lang.String">
+        select
+        password from users where id=#{id}
+    </select>
+
+    <select id="check" parameterType="java.lang.String" resultType="int">
+        SELECT COUNT(num) AS nums FROM users
+        WHERE id=#{id};
+    </select>
+</mapper>

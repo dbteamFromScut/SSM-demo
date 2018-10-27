@@ -1,0 +1,20 @@
+h3{
+    width: 100%;
+    background-color: darkblue;
+    color: white;
+}
+
+#form{
+    border-radius: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: cornflowerblue;
+    margin-top: 200px;
+    margin-left: 40%;
+    width: 300px;
+}
+
+#form form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
